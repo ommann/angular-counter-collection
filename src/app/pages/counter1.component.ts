@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy} from '@angular/core';
 import {interval} from "rxjs";
 
 @Component({
@@ -7,12 +7,14 @@ import {interval} from "rxjs";
   template: `
     <app-navigation></app-navigation>
 
+    <h1>Counter 1</h1>
+
     <div>{{count}}</div>
   `,
 })
 export class Counter1Component implements OnDestroy{
   // Take a moment to think about Object-Oriented Programming (OOP).
-  // We are now inside the implicit constructor of the Counter1Component class.
+  // The lines here are for the implicit (invisible) constructor of the Counter1Component class.
 
   count = 0;
 
@@ -23,11 +25,11 @@ export class Counter1Component implements OnDestroy{
   });
 
   ngOnDestroy() {
-    this.countSubscription.unsubscribe(); //
+    this.countSubscription.unsubscribe();
   }
 }
 
-
+// Side-effects are tracked with dirty checker called Zone.js
 
 
 

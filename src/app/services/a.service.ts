@@ -1,17 +1,5 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {
-  BehaviorSubject,
-  connect,
-  connectable,
-  EMPTY,
-  interval,
-  multicast,
-  of,
-  publish,
-  refCount,
-  share,
-  Subject
-} from "rxjs";
+import {BehaviorSubject, interval} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +12,7 @@ export class AService implements OnDestroy {
   });
 
   constructor() {
-    console.log("%Service A created", "color: blue; font-size: 48px; font-weight: bold");
+    console.log("%cService A created", "color: blue; font-size: 48px; font-weight: bold");
   }
 
   ngOnDestroy() {

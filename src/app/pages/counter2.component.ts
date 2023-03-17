@@ -7,6 +7,8 @@ import {interval, map} from 'rxjs';
   template: `
     <app-navigation></app-navigation>
 
+    <h1>Counter 2</h1>
+
     <div>{{hours$   | async}}</div>
     <div>{{minutes$ | async}}</div>
     <div>{{seconds$ | async}}</div>
@@ -15,16 +17,7 @@ import {interval, map} from 'rxjs';
 export class Counter2Component {
   count$ = interval(50);
 
-  hours$ = this.count$.pipe(
-    map((count) => Math.floor(count / 3600)),
-  );
-
-  minutes$ = this.count$.pipe(
-    map((count) => Math.floor(count / 60) % 60),
-  );
-
-  seconds$ = this.count$.pipe(
-    map((count) => count % 60),
-  );
-
+  hours$ =   this.count$.pipe(map( (count) => Math.floor(count / 3600)    ));
+  minutes$ = this.count$.pipe(map( (count) => Math.floor(count / 60) % 60 ));
+  seconds$ = this.count$.pipe(map( (count) => count % 60                  ));
 }

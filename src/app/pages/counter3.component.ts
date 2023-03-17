@@ -4,9 +4,11 @@ import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-counter3',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-navigation></app-navigation>
+
+    <h1>Counter 3</h1>
 
     <div>{{count$ | async}}</div>
   `,
